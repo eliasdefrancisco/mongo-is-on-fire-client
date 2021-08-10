@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+      {
+        "type": "node",
+        "request": "attach",
+        "name": "Attach to npm:dev",
+        "protocol": "inspector",
+        "port": 4322,
+        "restart": true,
+        "cwd": "${workspaceRoot}"
+      }
+    ]
+  }

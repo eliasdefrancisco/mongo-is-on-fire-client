@@ -1,0 +1,47 @@
+{
+  "name": "mongo-is-on-fire-client",
+  "version": "1.0.0",
+  "description": "Reactive client for MongoDB collection over mongo-is-on-fire-server",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "dev": "ts-node-dev --inspect=4321 --respawn -- src/index.ts",
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliasdefrancisco/mongo-is-on-fire-client.git"
+  },
+  "keywords": [
+    "MongoIsOnFireClient",
+    "MongoDB",
+    "reactive",
+    "real-time"
+  ],
+  "author": "Elias de Francisco Javaloyes",
+  "email": "eliasdefrancisco@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliasdefrancisco/mongo-is-on-fire-client/issues"
+  },
+  "homepage": "https://github.com/eliasdefrancisco/mongo-is-on-fire-client#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
+    "lodash.set": "^4.3.2",
+    "socket.io-client": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/lodash.set": "^4.3.6",
+    "@types/react-redux": "^7.1.18",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  }
+}
