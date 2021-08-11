@@ -1,5 +1,5 @@
-import config from "../config"
 import environments from "../enums/environments"
+import ConfigType from "../types/config"
 
 
 /**
@@ -18,7 +18,7 @@ export function sleep(ms: number) {
 /**
  * Wait two seconds if project is in developing state, to give time for debbuger to attach the event
  */
-export async function waitForDebuggerAttach() {
+export async function waitForDebuggerAttach(config: ConfigType) {
     if (config.environment === environments.develop) {
         await sleep(2000)
     }
