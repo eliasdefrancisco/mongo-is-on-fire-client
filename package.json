@@ -1,13 +1,14 @@
 {
   "name": "mongo-is-on-fire-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Reactive client for MongoDB collection over mongo-is-on-fire-server",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
     "dev": "ts-node-dev --inspect=4321 --respawn -- src/index.ts",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",

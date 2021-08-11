@@ -19,7 +19,7 @@ export default class MongoIsOnFire {
         const config: ConfigType = { socketUri, port, environment }
         await waitForDebuggerAttach(config)
         socketService = new SocketService(store)
-        socketService.startSocketListen()
+        socketService.startSocketListen(config)
         return store
     }
 
