@@ -1,6 +1,6 @@
 {
   "name": "mongo-is-on-fire-client",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Reactive client for MongoDB collection over mongo-is-on-fire-server",
   "main": "dist/index.js",
   "scripts": {
