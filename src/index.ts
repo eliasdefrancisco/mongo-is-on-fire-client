@@ -4,10 +4,10 @@ import SocketService from "./services/sockets";
 import environments from './enums/environments'
 import ConfigType from './types/config'
 
-let socketService: SocketService
 
 export default class MongoIsOnFire {
-
+    private socketService: SocketService
+    
     /**
      * Connect to a MongoIsOnFire-Server for reactivity
      * @param socketUri String url for MongoIsOnFire-Server, ie: 'ws://localhost'
@@ -18,8 +18,8 @@ export default class MongoIsOnFire {
     public async connect(socketUri: string, port: number, environment: environments = environments.production) {
         const config: ConfigType = { socketUri, port, environment }
         await waitForDebuggerAttach(config)
-        socketService = new SocketService(store)
-        socketService.startSocketListen(config)
+        this.socketService = new SocketService(store)
+        this.socketService.startSocketListen(config)
         return store
     }
 
@@ -27,20 +27,20 @@ export default class MongoIsOnFire {
      * Disconnect socket gracefully
      */
     public disconnect() {
-        socketService.stopSocketListen()
+        this.socketService.stopSocketListen()
     }
-
 }
 
 
 /**
  * Only for developing purposes
  */
-// async function initDev(){
+// import { areWeTestingWithJest } from './helpers/common'
+// export async function initDev(){
 //     const mongoIsOnFire = new MongoIsOnFire()
 //     const store = await mongoIsOnFire.connect('ws://localhost', 3069, environments.develop)
 //     store.subscribe(() => { 
 //         console.log('!!! store.getState(): ', store.getState()) 
 //     })
 // }
-// initDev()
+// if (!areWeTestingWithJest()) initDev()

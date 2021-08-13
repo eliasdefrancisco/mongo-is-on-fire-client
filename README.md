@@ -38,4 +38,4 @@ init()
 
 
 ## Requirements
-You must to have installed and running mongo-is-on-fire-server in your server befor connecting client... obviously
+You must to have installed and running mongo-is-on-fire-server in your server before connecting client... obviously
